@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="nav.css">
+  <!-- <link rel="stylesheet" href="pricing.css"> -->
+  <link rel="stylesheet" href="blog.css">
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <script src="https://kit.fontawesome.com/e164a56a3b.js" crossorigin="anonymous"></script>
+
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="bg-white h-5/6">
+    <header class="absolute inset-x-0 top-0 z-50">
+      <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+        <div class="flex lg:flex-1">
+          <a href="#home" class="-m-1.5 p-1.5">
+            <h1
+              class="text-[#5a51d8] font-bold text-xl hover:text-2xl hover:text-[#3d369d] transition-all duration-1000">
+              QuantumData</h1>
+            <!-- <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt=""> -->
+          </a>
+        </div>
+        <div class="flex lg:hidden">
+          <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+            <span class="sr-only">Open main menu</span>
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </button>
+        </div>
+        <!-- <div class="hidden lg:flex lg:gap-x-12">
+          <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Product</a>
+          <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Features</a>
+          <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Marketplace</a>
+          <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Company</a>
+        </div> -->
+        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+          <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Log in <span
+              aria-hidden="true">&rarr;</span></a>
+        </div>
+        <div class="navbar-container">
+          <button id="toggleButton" class="toggle-button">
+            <!-- Ikon untuk toggle button -->
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 1v16M1 9h16" />
+            </svg>
+          </button>
+          <div id="menu" class="menu">
+            <a href="#home" class="menu-item">
+              <!-- Ikon untuk Home -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon-menu" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m0 0v10a1 1 0 01-1 1h-3m-6 0h6" />
+              </svg>
+            </a>
+            <a href="#about" class="menu-item">
+              <!-- Ikon untuk Wallet -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon-menu" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 5v14m0-14c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 14c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"
+                  stroke="white" />
+              </svg>
+            </a>
+            <button id="backButton" class="menu-item back-button">
+              <!-- Kotak 4 menjadi satu -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="back-icon" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor">
+                <rect x="3" y="3" width="7" height="7" fill="currentColor" />
+                <rect x="14" y="3" width="7" height="7" fill="currentColor" />
+                <rect x="3" y="14" width="7" height="7" fill="currentColor" />
+                <rect x="14" y="14" width="7" height="7" fill="currentColor" />
+              </svg>
+            </button>
+            <a class="menu-item" href="#our-tim">
+              <!-- Ikon untuk Settings -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon-menu" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M6 3a1 1 0 00-1 1v2a1 1 0 001 1h2a1 1 0 001-1V4a1 1 0 00-1-1H6zM4 8a4 4 0 00-4 4v6a4 4 0 004 4h2a4 4 0 004-4v-6a4 4 0 00-4-4H4zm14-1a1 1 0 00-1 1v2a1 1 0 001 1h2a1 1 0 001-1V4a1 1 0 00-1-1h-2zm-1 7a4 4 0 00-4 4v6a4 4 0 004 4h2a4 4 0 004-4v-6a4 4 0 00-4-4h-2z"
+                  stroke="white" />
+              </svg>
+            </a>
+            <a href="#blog" class="menu-item">
+              <!-- Ikon untuk Profile -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon-menu" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 20H7a2 2 0 01-2-2V7a2 2 0 012-2h10a2 2 0 012 2v5m-7 8h5a2 2 0 002-2v-5m-6 6v-4m-2 4v-4m5 4h-2m0-4v-4m0 4h2m0-4v-4m0 4h-2m-1 0v-4m-2 4v-4"
+                  stroke="white" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </nav>
+      <!-- <div class="lg:hidden" role="dialog" aria-modal="true">
+        <div class="fixed inset-0 z-50"></div>
+        <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div class="flex items-center justify-between">
+            <a href="#" class="-m-1.5 p-1.5">
+              <span class="sr-only">Your Company</span>
+              <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
+            </a>
+            <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+              <span class="sr-only">Close menu</span>
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6 flow-root">
+            <div class="-my-6 divide-y divide-gray-500/10">
+              <div class="space-y-2 py-6">
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Product</a>
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Features</a>
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Marketplace</a>
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Company</a>
+              </div>
+              <div class="py-6">
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </header>
+
+    <!-- hero -->
+    <div class="relative isolate px-6 pt-14 lg:px-8" data-aos="fade-up" id="home">
+      <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+        aria-hidden="true">
+        <div
+          class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+          style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+        </div>
+      </div>
+      <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56  -translate-y-20">
+        <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+          <div
+            class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+            Announcing our next round of funding. <a href="#" class="font-semibold text-indigo-600"><span
+                class="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+        <div class="text-center">
+          <h1 class="text-8xl font-bold tracking-tight text-gray-950 sm:text-6xl">Data Solutions Tailored to Your Needs
+          </h1>
+          <p class="mt-6 text-lg leading-8 text-gray-600">Mengubah data menjadi keputusan yang cerdas dan strategis.
+            Temukan bagaimana layanan kami dapat meningkatkan performa bisnis Anda.</p>
+          <div class="mt-10 flex items-center justify-center gap-x-6">
+            <a href="#"
+              class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get
+              started</a>
+            <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Learn more <span
+                aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+        aria-hidden="true">
+        <div
+          class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+          style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- hero end -->
+
+  <!-- about -->
+  <div class="relative isolate overflow-hidden bg-slate-900 py-24 sm:py-32" id="about">
+    <img
+      src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
+      alt="" class="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center">
+    <div class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
+      aria-hidden="true">
+      <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
+        style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+      </div>
+    </div>
+    <div
+      class="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu"
+      aria-hidden="true">
+      <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
+        style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+      </div>
+    </div>
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl lg:mx-0">
+        <h3 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Work with us</h3>
+        <p class="mt-6 text-lg leading-8 text-gray-300">Kami berkomitmen untuk memberikan solusi data terbaik. Pelajari
+          lebih lanjut tentang visi, misi, dan sejarah kami.</p>
+      </div>
+      <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
+        <div
+          class="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
+          <a href="#">Open roles <span aria-hidden="true">&rarr;</span></a>
+          <a href="#">Internship program <span aria-hidden="true">&rarr;</span></a>
+          <a href="#">Our values <span aria-hidden="true">&rarr;</span></a>
+          <a href="#">Meet our leadership <span aria-hidden="true">&rarr;</span></a>
+        </div>
+        <dl class="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="flex flex-col-reverse">
+            <dt class="text-base leading-7 text-gray-300">Offices worldwide</dt>
+            <dd class="text-2xl font-bold leading-9 tracking-tight text-white">12</dd>
+          </div>
+          <div class="flex flex-col-reverse">
+            <dt class="text-base leading-7 text-gray-300">Full-time colleagues</dt>
+            <dd class="text-2xl font-bold leading-9 tracking-tight text-white">300+</dd>
+          </div>
+          <div class="flex flex-col-reverse">
+            <dt class="text-base leading-7 text-gray-300">Hours per week</dt>
+            <dd class="text-2xl font-bold leading-9 tracking-tight text-white">40</dd>
+          </div>
+          <div class="flex flex-col-reverse">
+            <dt class="text-base leading-7 text-gray-300">Paid time off</dt>
+            <dd class="text-2xl font-bold leading-9 tracking-tight text-white">Unlimited</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+  <!-- about end -->
+
+  <!-- our tim -->
+<!--    
+        <section class="text-gray-600 body-font">
+          <div class="container px-5 py-24 mx-auto">
+            <div class="flex flex-col text-center w-full mb-20">
+              <h1 class="text-2xl font-medium title-font mb-4 text-gray-900 tracking-widest">OUR TEAM</h1>
+              <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them.</p>
+            </div>
+            <div class="flex flex-wrap -m-4">
+              <div class="p-4 lg:w-1/2">
+                <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+                  <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="https://images.unsplash.com/photo-1654944990404-7cc4ff0fb2d4?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                  <div class="flex-grow sm:pl-8">
+                    <h2 class="title-font font-medium text-lg text-gray-900">Holden Caulfield</h2>
+                    <h3 class="text-gray-500 mb-3">Data analist</h3>
+                    <p class="mb-4">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
+                    <span class="inline-flex">
+                      <a class="text-gray-500">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                        </svg>
+                      </a>
+                      <a class="ml-2 text-gray-500">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                          <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                        </svg>
+                      </a>
+                      <a class="ml-2 text-gray-500">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                          <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                        </svg>
+                      </a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="p-4 lg:w-1/2">
+                <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+                  <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                  <div class="flex-grow sm:pl-8">
+                    <h2 class="title-font font-medium text-lg text-gray-900">Alper Kamu</h2>
+                    <h3 class="text-gray-500 mb-3">Leader</h3>
+                    <p class="mb-4">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
+                    <span class="inline-flex">
+                      <a class="text-gray-500">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                        </svg>
+                      </a>
+                      <a class="ml-2 text-gray-500">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                          <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                        </svg>
+                      </a>
+                      <a class="ml-2 text-gray-500">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                          <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                        </svg>
+                      </a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="p-4 lg:w-1/2">
+                <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+                  <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?q=80&w=1966&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                  <div class="flex-grow sm:pl-8">
+                    <h2 class="title-font font-medium text-lg text-gray-900">Atticus Finch</h2>
+                    <h3 class="text-gray-500 mb-3">Data Backup</h3>
+                    <p class="mb-4">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
+                    <span class="inline-flex">
+                      <a class="text-gray-500">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                        </svg>
+                      </a>
+                      <a class="ml-2 text-gray-500">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                          <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                        </svg>
+                      </a>
+                      <a class="ml-2 text-gray-500">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                          <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                        </svg>
+                      </a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="p-4 lg:w-1/2">
+                <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+                  <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                  <div class="flex-grow sm:pl-8">
+                    <h2 class="title-font font-medium text-lg text-gray-900">Henry Letham</h2>
+                    <h3 class="text-gray-500 mb-3">Data Analist</h3>
+                    <p class="mb-4">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
+                    <span class="inline-flex">
+                      <a class="text-gray-500">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                        </svg>
+                      </a>
+                      <a class="ml-2 text-gray-500">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                          <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                        </svg>
+                      </a>
+                      <a class="ml-2 text-gray-500">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                          <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                        </svg>
+                      </a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+     -->
+
+     <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+       <h1 class="text-3xl font-extrabold text-gray-900">
+        Our team
+       </h1>
+       <p class="mt-4 text-lg text-gray-500">
+        We're a dynamic group of individuals who are passionate about what we do and dedicated to delivering the best results for our clients.
+       </p>
+      </div>
+      <div class="mt-10">
+       <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="text-center">
+         <img alt="A person wearing a beanie and glasses, smiling and looking to the side." class="mx-auto h-40 w-40 rounded-lg" height="200" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="200"/>
+         <h3 class="mt-4 text-lg font-medium text-gray-900">
+          Lindsay Walton
+         </h3>
+         <p class="mt-2 text-sm text-gray-500">
+          Front-end Developer
+         </p>
+         <div class="mt-4 flex justify-center space-x-3">
+          <a class="text-gray-400 hover:text-gray-500" href="#">
+           <i class="fab fa-twitter">
+           </i>
+          </a>
+          <a class="text-gray-400 hover:text-gray-500" href="#">
+           <i class="fab fa-linkedin">
+           </i>
+          </a>
+         </div>
+        </div>
+        <div class="text-center">
+         <img alt="A person with short hair, looking directly at the camera." class="mx-auto h-40 w-40 rounded-lg" height="200" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="200"/>
+         <h3 class="mt-4 text-lg font-medium text-gray-900">
+          Courtney Henry
+         </h3>
+         <p class="mt-2 text-sm text-gray-500">
+          Designer
+         </p>
+         <div class="mt-4 flex justify-center space-x-3">
+          <a class="text-gray-400 hover:text-gray-500" href="#">
+           <i class="fab fa-twitter">
+           </i>
+          </a>
+          <a class="text-gray-400 hover:text-gray-500" href="#">
+           <i class="fab fa-linkedin">
+           </i>
+          </a>
+         </div>
+        </div>
+        <div class="text-center">
+         <img alt="A person with glasses, smiling slightly." class="mx-auto h-40 w-40 rounded-lg" height="200" src="https://images.unsplash.com/photo-1645231912253-970551bcfd1e?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="200"/>
+         <h3 class="mt-4 text-lg font-medium text-gray-900">
+          Tom Cook
+         </h3>
+         <p class="mt-2 text-sm text-gray-500">
+          Director of Product
+         </p>
+         <div class="mt-4 flex justify-center space-x-3">
+          <a class="text-gray-400 hover:text-gray-500" href="#">
+           <i class="fab fa-twitter">
+           </i>
+          </a>
+          <a class="text-gray-400 hover:text-gray-500" href="#">
+           <i class="fab fa-linkedin">
+           </i>
+          </a>
+         </div>
+        </div>
+        <div class="text-center">
+         <img alt="A person with curly hair and sunglasses, smiling." class="mx-auto h-40 w-40 rounded-lg" height="200" src="https://images.unsplash.com/photo-1654944990404-7cc4ff0fb2d4?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="200"/>
+         <h3 class="mt-4 text-lg font-medium text-gray-900">
+          Whitney Francis
+         </h3>
+         <p class="mt-2 text-sm text-gray-500">
+          Copywriter
+         </p>
+         <div class="mt-4 flex justify-center space-x-3">
+          <a class="text-gray-400 hover:text-gray-500" href="#">
+           <i class="fab fa-twitter">
+           </i>
+          </a>
+          <a class="text-gray-400 hover:text-gray-500" href="#">
+           <i class="fab fa-linkedin">
+           </i>
+          </a>
+         </div>
+        </div>
+        <div class="text-center">
+         <img alt="A person with long curly hair, wearing sunglasses and a necklace." class="mx-auto h-40 w-40 rounded-lg" height="200" src="https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?q=80&w=1966&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="200"/>
+         <h3 class="mt-4 text-lg font-medium text-gray-900">
+          Leonard Krasner
+         </h3>
+         <p class="mt-2 text-sm text-gray-500">
+          Senior Designer
+         </p>
+         <div class="mt-4 flex justify-center space-x-3">
+          <a class="text-gray-400 hover:text-gray-500" href="#">
+           <i class="fab fa-twitter">
+           </i>
+          </a>
+          <a class="text-gray-400 hover:text-gray-500" href="#">
+           <i class="fab fa-linkedin">
+           </i>
+          </a>
+         </div>
+        </div>
+        <div class="text-center">
+         <img alt="A person with a beard, wearing a colorful shirt, looking directly at the camera." class="mx-auto h-40 w-40 rounded-lg" height="200" src="https://images.unsplash.com/photo-1542190891-2093d38760f2?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="200"/>
+         <h3 class="mt-4 text-lg font-medium text-gray-900">
+          Floyd Miles
+         </h3>
+         <p class="mt-2 text-sm text-gray-500">
+          Principal Designer
+         </p>
+         <div class="mt-4 flex justify-center space-x-3">
+          <a class="text-gray-400 hover:text-gray-500" href="#">
+           <i class="fab fa-twitter">
+           </i>
+          </a>
+          <a class="text-gray-400 hover:text-gray-500" href="#">
+           <i class="fab fa-linkedin">
+           </i>
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+              
+        </ul>
+      </div>
+    </div>
+    
+
+    <!-- our tim end -->
+
+    <!-- sponsor -->
+    <!-- <div class="bg-white py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <h2 class="text-center text-lg font-semibold leading-8 text-gray-900">Trusted by the world’s most innovative teams</h2>
+      <div class="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
+        <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1" src="https://tailwindui.com/img/logos/158x48/transistor-logo-gray-900.svg" alt="Transistor" width="158" height="48">
+        <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1" src="https://tailwindui.com/img/logos/158x48/reform-logo-gray-900.svg" alt="Reform" width="158" height="48">
+        <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1" src="https://tailwindui.com/img/logos/158x48/tuple-logo-gray-900.svg" alt="Tuple" width="158" height="48">
+        <img class="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1" src="https://tailwindui.com/img/logos/158x48/savvycal-logo-gray-900.svg" alt="SavvyCal" width="158" height="48">
+        <img class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1" src="https://tailwindui.com/img/logos/158x48/statamic-logo-gray-900.svg" alt="Statamic" width="158" height="48">
+      </div>
+    </div>
+  </div> -->
+    <!-- sponsor end -->
+
+
+    <!-- blog -->
+    <div class="blog w-screen p-20 justify-center items-center" id="blog">
+      <div class="relative isolate px-6 pt-14 lg:px-8" id="home">
+        <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+          aria-hidden="true">
+          <div
+            class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+            style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+          </div>
+        </div>
+        <h3 class="text-8xl font-bold mb-6 text-center tracking-tight text-gray-950 sm:text-6xl drop-shadow-xl ">Latest
+          Insights</h1>
+          <p class="lg:w-2/3 mx-auto leading-relaxed mb-6 text-base">Baca artikel terbaru kami untuk mendapatkan wawasan
+            dan tips terbaru dalam dunia analisis data.</p>
+          <div class="blog-container">
+            <article>
+              <figure>
+                <div class="date-and-time">
+                  <span>Aug</span>
+                  <span>12</span>
+                  <span>2023</span>
+                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1541239370886-851049f91487?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="" loading="lazy" />
+                <figcaption>
+                  <span>Luxury Brands</span>
+                  <span>By Admin | Luxury</span>
+                </figcaption>
+              </figure>
+            </article>
+            <article>
+              <figure>
+                <div class="date-and-time">
+                  <span>Sep</span>
+                  <span>2</span>
+                  <span>2023</span>
+                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3552&q=80"
+                  alt="" loading="lazy" />
+                <figcaption>
+                  <span>Real Estate Trends</span>
+                  <span>By Admin | Real Estate</span>
+                </figcaption>
+              </figure>
+            </article>
+            <article>
+              <figure>
+                <div class="date-and-time">
+                  <span>Mar</span>
+                  <span>9</span>
+                  <span>2023</span>
+                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1554104707-a76b270e4bbb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80"
+                  alt="" loading="lazy" />
+                <figcaption>
+                  <span>Minimalistic Interiors</span>
+                  <span>By Admin | Interior Design</span>
+                </figcaption>
+              </figure>
+
+            </article>
+            <article>
+              <figure>
+                <div class="date-and-time">
+                  <span>Feb</span>
+                  <span>20</span>
+                  <span>2023</span>
+                </div>
+                <img
+                  src="https://plus.unsplash.com/premium_photo-1678559129633-5501c303a518?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="" loading="lazy" />
+                <figcaption>
+                  <span>Life Style</span>
+                  <span>By Admin | Lifestyle</span>
+                </figcaption>
+              </figure>
+            </article>
+            <article>
+              <figure>
+                <div class="date-and-time">
+                  <span>Sep</span>
+                  <span>11</span>
+                  <span>2023</span>
+                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1598644391960-f0c4b740a0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80"
+                  alt="" loading="lazy" />
+                <figcaption>
+                  <span>Football News</span>
+                  <span>By Admin | Sports</span>
+                </figcaption>
+              </figure>
+
+            </article>
+            <article>
+              <div class="date-and-time">
+                <span>Sep</span>
+                <span>8</span>
+                <span>2023</span>
+              </div>
+              <blockquote data-url="https://google.com"><br>
+                "Silence is golden when you can't think of a good answer." <br><br>- Muhammad Ali
+              </blockquote>
+            </article>
+            <article>
+              <figure>
+                <div class="date-and-time">
+                  <span>Sep</span>
+                  <span>19</span>
+                  <span>2023</span>
+                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1617039346892-d72191157374?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="" loading="lazy" />
+                <figcaption>
+                  <span>Fashion</span>
+                  <span>By Admin | Fashion</span>
+                </figcaption>
+              </figure>
+
+            </article>
+            <article>
+              <figure>
+                <div class="date-and-time">
+                  <span>Sep</span>
+                  <span>8</span>
+                  <span>2023</span>
+                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1525770041010-2a1233dd8152?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3506&q=80"
+                  alt="" loading="lazy" />
+                <figcaption>
+                  <span>Social Media Apps</span>
+                  <span>By Admin | Technology</span>
+                </figcaption>
+              </figure>
+
+            </article>
+            <article>
+              <figure>
+                <div class="date-and-time">
+                  <span>Sep</span>
+                  <span>2</span>
+                  <span>2023</span>
+                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1619451427882-6aaaded0cc61?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80"
+                  alt="" loading="lazy" />
+                <figcaption>
+                  <span>Skin Care</span>
+                  <span>By Admin | Health</span>
+                </figcaption>
+              </figure>
+
+            </article>
+            <article>
+              <figure>
+                <div class="date-and-time">
+                  <span>Sep</span>
+                  <span>3</span>
+                  <span>2023</span>
+                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3264&q=80"
+                  alt="" loading="lazy" />
+                <figcaption>
+                  <span>Luxury Interiors</span>
+                  <span>By Admin | Luxury</span>
+                </figcaption>
+              </figure>
+
+            </article>
+            <article>
+              <figure>
+                <div class="date-and-time">
+                  <span>Sep</span>
+                  <span>11</span>
+                  <span>2023</span>
+                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="" loading="lazy" />
+                <figcaption>
+                  <span>internet</span>
+                  <span>By Admin | Internet</span>
+                </figcaption>
+              </figure>
+
+            </article>
+            <article>
+              <div class="date-and-time">
+                <span>Sep</span>
+                <span>8</span>
+                <span>2023</span>
+              </div>
+              <blockquote data-url="https://google.com">
+                www.google.com
+              </blockquote>
+            </article>
+            <article>
+              <figure>
+                <div class="date-and-time">
+                  <span>Sep</span>
+                  <span>19</span>
+                  <span>2023</span>
+                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3542&q=80"
+                  alt="" loading="lazy" />
+                <figcaption>
+                  <span>Smart Watches</span>
+                  <span>By Admin | Technology</span>
+                </figcaption>
+              </figure>
+
+            </article>
+            <article>
+              <figure>
+                <div class="date-and-time">
+                  <span>Sep</span>
+                  <span>22</span>
+                  <span>2023</span>
+                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1613482184972-f9c1022d0928?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80"
+                  alt="" loading="lazy" />
+                <figcaption>
+                  <span>Designer Bags</span>
+                  <span>By Admin | Fashion</span>
+                </figcaption>
+              </figure>
+
+            </article>
+            <article>
+              <figure>
+                <div class="date-and-time">
+                  <span>Sep</span>
+                  <span>4</span>
+                  <span>2023</span>
+                </div>
+                <img
+                  src="https://plus.unsplash.com/premium_photo-1670249419881-b115ba63924a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="" loading="lazy" />
+                <figcaption>
+                  <span>Crypto News</span>
+                  <span>By Admin | Crypto</span>
+                </figcaption>
+              </figure>
+
+            </article>
+            <article>
+              <figure>
+                <div class="date-and-time">
+                  <span>Sep</span>
+                  <span>7</span>
+                  <span>2023</span>
+                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1515940037466-8f595ab6e713?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3264&q=80"
+                  alt="" loading="lazy" />
+                <figcaption>
+                  <span>Sony Gadgets</span>
+                  <span>By Admin | Technology</span>
+                </figcaption>
+              </figure>
+            </article>
+            <article>
+              <figure>
+                <div class="date-and-time">
+                  <span>Sep</span>
+                  <span>13</span>
+                  <span>2023</span>
+                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="" loading="lazy" />
+                <figcaption>
+                  <span>Data analist</span>
+                  <span>By Admin | Data</span>
+                </figcaption>
+              </figure>
+            </article>
+            <article>
+              <figure>
+                <div class="date-and-time">
+                  <span>Sep</span>
+                  <span>19</span>
+                  <span>2023</span>
+                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1678957949479-b1e876bee3f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3430&q=80"
+                  alt="" loading="lazy" />
+                <figcaption>
+                  <span>AI WORLD - 4GPT</span>
+                  <span>By Admin | Technology</span>
+                </figcaption>
+              </figure>
+            </article>
+
+            <article>
+              <figure>
+                <div class="date-and-time">
+                  <span>Sep</span>
+                  <span>20</span>
+                  <span>2023</span>
+                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1585032083927-c7b26d6c1d07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3405&q=80"
+                  alt="" loading="lazy" />
+                <figcaption>
+                  <span>Basketball News</span>
+                  <span>By Admin | Sports</span>
+                </figcaption>
+              </figure>
+            </article>
+
+            <article>
+              <figure>
+                <div class="date-and-time">
+                  <span>Sep</span>
+                  <span>17</span>
+                  <span>2023</span>
+                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1605902711834-8b11c3e3ef2f?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="" loading="lazy" />
+                <figcaption>
+                  <span>Ecommerce Trends</span>
+                  <span>By Admin | Shopping</span>
+                </figcaption>
+
+              </figure>
+            </article>
+
+          </div>
+
+          <div class="overlay" id="overlay"></div>
+          <div class="popup" id="popup">
+            <span id="close-btn" class="material-symbols-outlined">
+              close
+            </span>
+            <div id="popup-content">
+            </div>
+          </div>
+      </div>
+      <!-- blog end -->
+
+      <!-- footer -->
+      <footer>
+        <div class="footer-container">
+          <div class="footer-left">
+            <h1 class="text-xl font-bold text-[#5a51d8] hover:text-2xl hover:text-[#3d369d] transition-all duration-1000 mb-3">QuantumData</h1>
+            <p>3995 Pancoran, Jakarta, Indonesia</p>
+            <p>Call us: +40 (850) 455 52 93</p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-middle">
+            <h3>Explore</h3>
+            <ul>
+              <li><a href="#">Features</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Login</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-middle">
+            <h3>Legal</h3>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Services</a></li>
+              <li><a href="#">Documentations</a></li>
+              <li><a href="#">Site Map</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-right">
+            <h3>Subscribe</h3>
+            <p>Subscribe to get the latest news from us</p>
+            <form>
+              <input type="email" placeholder="Email address" />
+              <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2024 QuantumData. All rights reserved.</p>
+        </div>
+      </footer>
+
+      <!-- Scripts -->
+      <script src="script.js"></script>
+      <!-- Footer End -->
+
+
+      <script src="doms.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+        AOS.init();
+      </script>
+</body>
+
+</html>
